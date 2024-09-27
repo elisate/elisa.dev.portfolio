@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import SingleBlog from "./pages/SingleBlog";
 import About from "./pages/About";
+import SignUp from "./pages/SignUp";
 export default function App() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Welcome />} />
+            <Route path='/welcome' element={<Welcome/>}/>
             <Route path="/projects" element={<Project />} />
             <Route path="/blog" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
@@ -21,7 +23,8 @@ export default function App() {
             <Route path="/singleblog"element={<SingleBlog/>}/>
 
           </Route>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp/>}/>
           
         </Routes>
       </BrowserRouter>

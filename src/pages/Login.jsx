@@ -1,10 +1,65 @@
 import { FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import the Link component
 import LoginVectorImage from "../assets/login.png";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { Notify } from "notiflix";
+import { useState } from "react"; // Import useState
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const [loading, setLoading] = useState(false); // Add loading state
+
+  const onSubmit = async (data) => {
+    const { email, password } = data;
+    const formData = new FormData();
+
+    try {
+      setLoading(true); // Set loading to true
+      formData.append("email", email);
+      formData.append("password", password);
+
+      const res = await axios.post(
+        "http://localhost:5000/user/login",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // Notify success
+      Notify.success("Login successful!");
+      reset();
+      // Handle successful login response (e.g., redirect, store tokens)
+      // Example: window.location.href = '/dashboard';
+      const userToken = res.data;
+      localStorage.setItem("userToken", JSON.stringify(userToken));
+      const role = userToken.user.role;
+      
+      if (role === "Admin") {
+        navigate("/welcome");
+      } else {
+        navigate("/welcome");
+      }
+    } catch (error) {
+      console.error(error);
+      Notify.failure("Login failed. Please check your credentials."); // Notify failure
+    } finally {
+      setLoading(false); // Set loading to false
+    }
+  };
+
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center h-screen bg-[#0a0b1e] p-6 overflow-hidden">
-      
       {/* Left Side - Image */}
       <div className="hidden lg:block lg:w-1/2 p-6">
         <img
@@ -25,42 +80,62 @@ function Login() {
         </p>
 
         {/* Login Form */}
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-400 mb-2"
+            >
               Email
             </label>
             <input
               type="email"
-              id="email"
-              className="w-full p-3 bg-[#2b2b3d] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#5B4EFF] focus:border-transparent"
+              name="email"
+              className={`w-full p-3 bg-[#2b2b3d] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#5B4EFF] focus:border-transparent ${
+                errors.email ? "border-red-500" : ""
+              }`}
               placeholder="Enter your email"
-              required
+              {...register("email", { required: true })}
             />
+            {errors.email && (
+              <span className="text-red-500 text-sm">Email is required.</span>
+            )}
           </div>
 
           {/* Password Field */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-400 mb-2">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-400 mb-2"
+            >
               Password
             </label>
             <input
               type="password"
-              id="password"
-              className="w-full p-3 bg-[#2b2b3d] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#5B4EFF] focus:border-transparent"
+              name="password"
+              className={`w-full p-3 bg-[#2b2b3d] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#5B4EFF] focus:border-transparent ${
+                errors.password ? "border-red-500" : ""
+              }`}
               placeholder="Enter your password"
-              required
+              {...register("password", { required: true })}
             />
+            {errors.password && (
+              <span className="text-red-500 text-sm">
+                Password is required.
+              </span>
+            )}
           </div>
 
-          {/* Login Button */}
           <div>
             <button
               type="submit"
-              className="w-full p-3 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] text-white rounded-md font-bold hover:opacity-90 transition-opacity duration-300"
+              className={`w-full p-3 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] text-white rounded-md font-bold hover:opacity-90 transition-opacity duration-300 ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={loading} // Disable button while loading
             >
-              Log In
+              {loading ? "Logging In..." : "Log In"}
             </button>
           </div>
         </form>
@@ -68,12 +143,20 @@ function Login() {
         {/* Google Login */}
         <div className="text-center">
           <p className="text-gray-400 mb-4">Or log in with:</p>
-          <button
-            className="flex items-center justify-center space-x-2 p-3 w-full bg-[#4285F4] text-white rounded-md hover:opacity-90 transition-opacity duration-300"
-          >
+          <button className="flex items-center justify-center space-x-2 p-3 w-full bg-[#4285F4] text-white rounded-md hover:opacity-90 transition-opacity duration-300">
             <FaGoogle className="text-lg" />
             <span>Login with Google</span>
           </button>
+        </div>
+
+        {/* Sign Up Link */}
+        <div className="text-center text-gray-400">
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className="text-[#5B4EFF] hover:underline">
+              Sign up here
+            </Link>
+          </p>
         </div>
       </div>
     </div>
