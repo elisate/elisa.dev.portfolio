@@ -17,11 +17,11 @@ const Status_loged = () => {
   if (role === undefined) {
     return (
       <div className="flex md:hidden lg:flex items-center">
-         <Link to="/login">
-            <button className="ml-4 px-5 py-2 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] text-white rounded-full hover:opacity-90 transition-opacity duration-300">
-              Login
-            </button>
-          </Link> 
+        <Link to="/login">
+          <button className="ml-4 px-5 py-2 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-full hover:opacity-90 transition-opacity duration-300">
+            Login
+          </button>
+        </Link>
       </div>
     );
   } else {

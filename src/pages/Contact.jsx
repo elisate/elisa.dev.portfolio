@@ -58,7 +58,7 @@ function Contact() {
           <h1 className="text-4xl font-bold mb-4 animate-fade-in-up">
             Get in Touch
           </h1>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mx-auto mb-6 animate-width-grow"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] mx-auto mb-6 animate-width-grow"></div>
           <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up delay-2">
             If you would like to contact me, feel free to send me a message
             using the form below or reach out through the contact information
@@ -229,7 +229,7 @@ function Contact() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] rounded-md text-white font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center"
+                className="w-full py-4 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]  rounded-md text-white font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center"
               >
                 {loading ? "Loading..." : "Send Message"}
               </button>

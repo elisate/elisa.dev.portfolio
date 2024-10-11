@@ -2,6 +2,12 @@ import { FaReact, FaAws } from 'react-icons/fa';
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiGraphql, SiLaravel } from 'react-icons/si'; 
 import about from "../assets/about.jpg";
 import Resume from "../assets/Elisa_Updated_cv.pdf";
+import { SiSpringboot } from "react-icons/si";
+import { AiOutlineJavaScript } from "react-icons/ai";
+import { FaJava } from "react-icons/fa";
+import { FaSass } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+import { SiMongodb } from "react-icons/si";
 
 function About() {
   return (
@@ -18,7 +24,7 @@ function About() {
       {/* Text Section */}
       <div className="md:w-1/2 md:pl-8">
         <h2 className="text-4xl font-bold mb-4">About Myself</h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mb-6"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] mb-6"></div>
         <p className="text-gray-400 mb-8 leading-relaxed">
           As a dedicated software engineer, I bring a strong problem-solving
           mindset and technical proficiency to every project. With hands-on
@@ -36,45 +42,96 @@ function About() {
           <div className="flex flex-wrap gap-4">
             {/* Icons and Tech Names */}
             <div className="flex items-center space-x-2">
-              <SiNextdotjs className="text-[#5B4EFF]" size={24} />
+              <SiNextdotjs
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
               <span>Next.js</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <FaReact className="text-[#5B4EFF]" size={24} />
+              <FaReact
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
               <span>React</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiTypescript className="text-[#5B4EFF]" size={24} />
-              <span>TypeScript</span>
+              <AiOutlineJavaScript
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>JavaScript</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiTailwindcss className="text-[#5B4EFF]" size={24} />
+              <SiTailwindcss
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
               <span>Tailwind CSS</span>
             </div>
-
             <div className="flex items-center space-x-2">
-              <FaAws className="text-[#5B4EFF]" size={24} />
-              <span>AWS</span>
+              <FaSass
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>Sass</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiGraphql className="text-[#5B4EFF]" size={24} />
+              <FaJava
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>Java</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <SiSpringboot
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>Springboot</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <SiGraphql
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
               <span>GraphQL</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiLaravel className="text-[#5B4EFF]" size={24} />
+              <SiLaravel
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
               <span>Laravel</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <GrMysql
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>Sql</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <SiMongodb
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                size={24}
+              />
+              <span>Mongo</span>
             </div>
           </div>
           <br />
           <br />
           <span className="text-[#32F6FF] font-semibold">
-            Others: Git • Redux Toolkit • Java • Python • Jest • NodeJS • NestJS
-            • OpenCV • SEO
+            Additionl: Git • Python •C++ • NodeJS 
+          
           </span>
         </p>
         <div className="flex space-x-4">
@@ -82,8 +139,8 @@ function About() {
             More Info
           </button>
           <a href={Resume} download="Elisa_Updated_cv.pdf">
-            <button className="relative px-6 py-2 bg-[#5B4EFF] text-white rounded-full hover:bg-[#32F6FF] transition-colors duration-300 animate-pulse">
-              <span className="inline-block overflow-hidden whitespace-nowrap  pr-2 animate-typing">
+            <button className="relative px-6 py-2 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-full hover:bg-[#32F6FF] transition-colors duration-300 animate-bounce">
+              <span className="inline-block overflow-hidden whitespace-nowrap  pr-2 ">
                 Download cv
               </span>
             </button>
