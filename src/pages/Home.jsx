@@ -32,10 +32,10 @@ function Home() {
 
         {/* Image Section */}
         <div className="flex-1 mt-8 md:mt-0 flex justify-center relative">
-          <div className="relative z-10 animate-fade-in-up delay-6">
+          <div className="relative z-10 animate-fade-in-up delay-6 w-60 ">
             <img
               src={Profile}
-              alt="Alain Niganze"
+              alt="Elisa pic"
               className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full shadow-2xl transform hover:scale-110 transition-transform duration-500 ease-in-out"
             />
           </div>
