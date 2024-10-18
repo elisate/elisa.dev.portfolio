@@ -7,7 +7,8 @@ function Profile({ handleprofile }) {
     let username = userToken?.user?.lastname;
     let usernames = userToken?.user?.firstname;
     let email = userToken?.user?.email;
-    let role = userToken?.user?.role;
+  let role = userToken?.user?.role;
+  
   function Logout() {
     localStorage.removeItem("userToken");
     window.location.href = "/";

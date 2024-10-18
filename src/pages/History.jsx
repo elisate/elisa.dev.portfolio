@@ -19,10 +19,10 @@ function History() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-10 lg:px-16">
         {/* Job Card 1 */}
         <div className="bg-[#1e1e2f] p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up delay-4">
-          <h3 className="text-2xl font-bold mb-2">Backend Engineer</h3>
+          <h3 className="text-2xl font-bold mb-2">Full stack developer</h3>
           <p className="text-gray-400 mb-4">
             {" "}
-            ALX-Rwanda Deco Center, KG 9 Ave, Kigali, Rwanda
+            Ict chamber-Rwanda Deco Center, KG 9 Ave, Kigali, Rwanda
           </p>
           <p className="text-gray-400 mb-6">
             Responsible for developing and maintaining server-side logic,
@@ -31,7 +31,7 @@ function History() {
           </p>
           <div className="flex items-center">
             <span className="px-4 py-2 bg-[#292b45] text-gray-400 rounded-full">
-              June '2021 to  July 2023
+              June '2021 to July 2023
             </span>
           </div>
         </div>
@@ -51,46 +51,42 @@ function History() {
           <div className="flex items-center">
             <span className="px-4 py-2 bg-[#292b45] text-gray-400 rounded-full">
               May '2023 to Sept 2023
-              
             </span>
           </div>
         </div>
 
         {/* Job Card 3 */}
         <div className="bg-[#1e1e2f] p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up delay-8">
-          <h3 className="text-2xl font-bold mb-2">Embedded System Developer</h3>
-          <p className="text-gray-400 mb-4">
-            Fablab Rwanda, 44 KG 548 St, Kigali
-          </p>
+          <h3 className="text-2xl font-bold mb-2">Iot</h3>
+          <p className="text-gray-400 mb-4">CMU, 44 KG 548 St, Kigali</p>
           <p className="text-gray-400 mb-6">
-            Specialized in designing and implementing embedded systems,
-            integrating hardware and software, and optimizing system performance
-            for various applications.
+            Specialized in designing and Internet of Things systems, integrating
+            hardware and software, and optimizing system performance for various
+            applications.
           </p>
           <div className="flex items-center">
             <span className="px-4 py-2 bg-[#292b45] text-gray-400 rounded-full">
               Feb '2024 to May 2024
-               
             </span>
           </div>
         </div>
 
         {/* Job Card 4 */}
         <div className="bg-[#1e1e2f] p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up delay-10">
-          <h3 className="text-2xl font-bold mb-2">Full stack Developer</h3>
+          <h3 className="text-2xl font-bold mb-2">Mobile App Developer</h3>
           <p className="text-gray-400 mb-4">
             Makuza Plazza, 11th floor Block A
           </p>
           <p className="text-gray-400 mb-6">
-            At Makuza Plazza, I work as a Full Stack Developer where I am
-            responsible for developing and maintaining an e-commerce website. I
-            handle both the frontend and backend development using Next.js and
-            Node.js, ensuring seamless user experience and robust server-side
-            performance.
+            At Makuza Plaza, I work as a Full Stack Developer, where I am
+            responsible for developing and maintaining a mobile application for
+            an e-commerce platform. I handle both the frontend and backend
+            development using React Native and Node.js, ensuring a seamless user
+            experience and robust server-side performance.
           </p>
           <div className="flex items-center">
             <span className="px-4 py-2 bg-[#292b45] text-gray-400 rounded-full">
-              May 2024  to Present
+              May 2024 to Present
             </span>
           </div>
         </div>

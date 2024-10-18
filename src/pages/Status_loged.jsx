@@ -13,7 +13,7 @@ const Status_loged = () => {
   let userToken = JSON.parse(localStorage.getItem("userToken"));
   let username = userToken?.user?.lastname;
   let role = userToken?.user?.role;
-
+console.log('kkkkkkkkkkkkkkkkkkkkkkkkk',role)
   if (role === undefined) {
     return (
       <div className="flex md:hidden lg:flex items-center">
