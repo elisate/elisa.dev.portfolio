@@ -10,7 +10,7 @@ function Project() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up">
           Projects
         </h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mx-auto mb-6 animate-width-grow"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] mx-auto mb-6 animate-width-grow"></div>
         <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up delay-2">
           Below are some of the projects I have worked on, showcasing my skills
           in web development using technologies like React and Tailwind CSS.

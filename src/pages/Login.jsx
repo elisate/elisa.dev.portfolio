@@ -27,7 +27,7 @@ function Login() {
       formData.append("password", password);
 
       const res = await axios.post(
-        "http://localhost:5000/user/login",
+        "https://elis-dev-backend.onrender.com/user/login",
         formData,
         {
           headers: {
@@ -130,7 +130,7 @@ function Login() {
           <div>
             <button
               type="submit"
-              className={`w-full p-3 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] text-white rounded-md font-bold hover:opacity-90 transition-opacity duration-300 ${
+              className={`w-full p-3 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-md font-bold hover:opacity-90 transition-opacity duration-300 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading} // Disable button while loading

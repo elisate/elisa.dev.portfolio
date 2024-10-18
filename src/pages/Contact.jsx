@@ -29,7 +29,7 @@ function Contact() {
 
       // Send form data to the backend
       const res = await axios.post(
-        `http://localhost:5000/contact/createContact`,
+        `https://elis-dev-backend.onrender.com/contact/createContact`,
         formData,
         {
           headers: {
