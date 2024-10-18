@@ -28,7 +28,7 @@ function SignUp() {
     try {
       setLoading(true); // Set loading to true when request starts
       const res = await axios.post(
-        `http://localhost:5000/user/register`,
+        `https://elis-dev-backend.onrender.com/user/register`,
         formData,
         {
           headers: {
