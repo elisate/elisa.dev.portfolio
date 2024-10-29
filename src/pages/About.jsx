@@ -8,6 +8,7 @@ import { FaJava } from "react-icons/fa";
 import { FaSass } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 
 function About() {
   return (
@@ -130,8 +131,7 @@ function About() {
           <br />
           <br />
           <span className="text-[#32F6FF] font-semibold">
-            Additionl: Git • Python •C++ • NodeJS 
-          
+            Additionl: Git • Python •C++ • NodeJS • TypeScript
           </span>
         </p>
         <div className="flex space-x-4">

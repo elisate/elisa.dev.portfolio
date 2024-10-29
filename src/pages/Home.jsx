@@ -36,7 +36,7 @@ function Home() {
             <img
               src={Profile}
               alt="Elisa pic"
-              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full shadow-2xl transform hover:scale-110 transition-transform duration-500 ease-in-out"
+              className="w-64 h-64 md:w-64 md:h-64 lg:w-96 lg:h-96 rounded-full shadow-2xl transform hover:scale-110 transition-transform duration-500 ease-in-out"
             />
           </div>
           <div className="absolute -z-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] rounded-full filter blur-3xl opacity-30 top-10 md:top-12 lg:top-16 right-0 md:right-16 lg:right-24 animate-pulse" />

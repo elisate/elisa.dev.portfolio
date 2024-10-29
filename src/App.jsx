@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/singleblog"element={<SingleBlog/>}/>
 
           </Route>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<SignUp/>}/>
           
         </Routes>
