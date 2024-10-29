@@ -8,7 +8,7 @@ import { FaJava } from "react-icons/fa";
 import { FaSass } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
+
 
 function About() {
   return (
