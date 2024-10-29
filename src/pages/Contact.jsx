@@ -159,7 +159,7 @@ function Contact() {
           <div>
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Input Fields */}
+                
                 <div>
                   <input
                     type="text"
