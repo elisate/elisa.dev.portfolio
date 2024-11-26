@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Import the Link component
-import LoginVectorImage from "../assets/login.png"; // Assuming you want to keep the image for the SignUp as well
+import LoginVectorImage from "../assets/logine.png"; // Assuming you want to keep the image for the SignUp as well
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Notify } from "notiflix"; // Import Notify from notiflix

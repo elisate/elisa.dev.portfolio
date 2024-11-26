@@ -1,6 +1,6 @@
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import the Link component
-import LoginVectorImage from "../assets/login.png";
+import LoginVectorImage from "../assets/logine.png";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Notify } from "notiflix";
@@ -17,46 +17,52 @@ function Login() {
   } = useForm();
   const [loading, setLoading] = useState(false); // Add loading state
 
-  const onSubmit = async (data) => {
-    const { email, password } = data;
-    const formData = new FormData();
+ const onSubmit = async (data) => {
+   const { email, password } = data;
+   const formData = new FormData();
 
-    try {
-      setLoading(true); // Set loading to true
-      formData.append("email", email);
-      formData.append("password", password);
+   try {
+     setLoading(true); // Set loading to true
+     formData.append("email", email);
+     formData.append("password", password);
 
-      const res = await axios.post(
-        "https://elis-dev-backend.onrender.com/user/login",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+     const res = await axios.post(
+       "https://elis-dev-backend.onrender.com/user/login",
+       formData,
+       {
+         headers: {
+           "Content-Type": "application/json",
+         },
+       }
+     );
 
-      // Notify success
-      Notify.success("Login successful!");
-      reset();
-      // Handle successful login response (e.g., redirect, store tokens)
-      // Example: window.location.href = '/dashboard';
-      const userToken = res.data;
-      localStorage.setItem("userToken", JSON.stringify(userToken));
-      const role = userToken.user.role;
-      
-      if (role === "Admin") {
-        navigate("/welcome");
-      } else {
-        navigate("/welcome");
-      }
-    } catch (error) {
-      console.error(error);
-      Notify.failure("Login failed. Please check your credentials."); // Notify failure
-    } finally {
-      setLoading(false); // Set loading to false
-    }
-  };
+     // Notify success
+     Notify.success("Login successful!");
+     reset();
+
+     // Store token in localStorage
+     const userToken = res.data;
+     localStorage.setItem("userToken", JSON.stringify(userToken));
+
+     // Get the role from the response
+     const role = userToken?.user?.role; // Ensure role is extracted properly
+     console.log("User role:", role); // Debugging role value
+
+     // Navigate based on role
+     if (role === "Admin") {
+       console.log("Navigating to dashboard...");
+       navigate("/dashboard");
+     } else {
+       console.log("Navigating to landing...");
+       navigate("/landing");
+     }
+   } catch (error) {
+     console.error("Login error:", error);
+     Notify.failure("Login failed. Please check your credentials.");
+   } finally {
+     setLoading(false); // Set loading to false
+   }
+ };
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center h-screen bg-[#0a0b1e] p-6 overflow-hidden">
