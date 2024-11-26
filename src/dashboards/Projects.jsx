@@ -35,7 +35,7 @@ const [project, setProject] = useState([]);
     const getproject = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/project/getProjects"
+          "https://elis-dev-backend.onrender.com/project/getProjects"
         );
         console.log(response.data);
         setProject(response.data);

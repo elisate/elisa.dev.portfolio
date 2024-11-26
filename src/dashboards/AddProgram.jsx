@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Notify } from "notiflix";
 
-
 function AddProgram({ handleProgram }) {
   const {
     register,
@@ -12,121 +11,175 @@ function AddProgram({ handleProgram }) {
     reset,
     formState: { errors },
   } = useForm();
-  const [loading, setLoading] = useState(false); // State to track loading
+  const [loading, setLoading] = useState(false);
 
-  const onsubmit = async (data) => {
-    const userToken = JSON.parse(localStorage.getItem("userToken"));
-    const token = userToken?.user?.tokens?.accessToken;
-    const { images, program_title, programContent } = data;
+  const onSubmit = async (data) => {
+    const { images, projectTitle, projectContent, projectRep, projectLink } =
+      data;
     const formData = new FormData();
 
     try {
-      setLoading(true); // Start loading
-      formData.append("images", images[0]); // Ensure to get the file from the array
-      formData.append("program_title", program_title);
-      formData.append("programContent", programContent);
+      setLoading(true);
+      formData.append("images", images[0]);
+      formData.append("projectTitle", projectTitle);
+      formData.append("projectContent", projectContent);
+      formData.append("projectRep", projectRep);
+      formData.append("projectLink", projectLink);
 
-      const res = await axios.post(
-        "https://future-focus-rwanada.onrender.com/program/createProgram",
+      await axios.post(
+        "https://elis-dev-backend.onrender.com/project/createProject",
         formData,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { "Content-Type": "multipart/form-data" },
         }
       );
 
-      // Notify user of success
       Notify.success("Program added successfully!");
       reset();
     } catch (error) {
       console.log(error);
-      // Notify user of error
       Notify.failure("Failed to add program. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-[2000] bg-[rgba(50,49,49,0.5)]">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg relative">
-        <div className="flex items-center justify-between mb-4">
-          <div className="text-xl font-extralight">Add New Program</div>
-          <div className="absolute top-4 right-4 text-2xl cursor-pointer hover:text-[#4f1930]">
-            <IoClose onClick={handleProgram} />
-          </div>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl relative">
+        {/* Close Icon */}
+        <div className="absolute top-4 right-4 text-2xl cursor-pointer hover:text-[#4f1930]">
+          <IoClose onClick={handleProgram} />
         </div>
 
-        <form onSubmit={handleSubmit(onsubmit)}>
-          <div className="mb-4">
-            <label htmlFor="images" className="block font-semibold mb-2">
-              Program Image
-            </label>
-            <input
-              type="file"
-              id="images"
-              placeholder="Add program image"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-base"
-              {...register("images", { required: true })}
-            />
-            {errors.images && (
-              <span className="text-red-500 text-sm">Image is required</span>
-            )}
+        {/* Form */}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Column 1 */}
+            <div className="space-y-4">
+              <div>
+                <label
+                  htmlFor="projectTitle"
+                  className="block font-semibold mb-2"
+                >
+                  Project Title
+                </label>
+                <input
+                  type="text"
+                  id="projectTitle"
+                  placeholder="Enter project title"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  {...register("projectTitle", { required: true })}
+                />
+                {errors.projectTitle && (
+                  <span className="text-red-500 text-sm">
+                    Title is required
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="images" className="block font-semibold mb-2">
+                  Project Image
+                </label>
+                <input
+                  type="file"
+                  id="images"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  {...register("images", { required: true })}
+                />
+                {errors.images && (
+                  <span className="text-red-500 text-sm">
+                    Image is required
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="space-y-4">
+              <div>
+                <label
+                  htmlFor="projectRep"
+                  className="block font-semibold mb-2"
+                >
+                  Project Representative
+                </label>
+                <input
+                  type="text"
+                  id="projectRep"
+                  placeholder="Enter project representative"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  {...register("projectRep", { required: true })}
+                />
+                {errors.projectRep && (
+                  <span className="text-red-500 text-sm">
+                    Representative is required
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="projectLink"
+                  className="block font-semibold mb-2"
+                >
+                  Project Link
+                </label>
+                <input
+                  type="url"
+                  id="projectLink"
+                  placeholder="Enter project link"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  {...register("projectLink", { required: true })}
+                />
+                {errors.projectLink && (
+                  <span className="text-red-500 text-sm">Link is required</span>
+                )}
+              </div>
+            </div>
+
+            {/* Full-Width Column */}
+            <div className="col-span-1 md:col-span-2">
+              <label
+                htmlFor="projectContent"
+                className="block font-semibold mb-2"
+              >
+                Project Content
+              </label>
+              <textarea
+                id="projectContent"
+                placeholder="Enter project content"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md resize-none"
+                {...register("projectContent", { required: true })}
+                rows="5"
+              />
+              {errors.projectContent && (
+                <span className="text-red-500 text-sm">
+                  Content is required
+                </span>
+              )}
+            </div>
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="program_title" className="block font-semibold mb-2">
-              Program Title
-            </label>
-            <input
-              type="text"
-              id="program_title"
-              placeholder="Enter program title"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-base"
-              {...register("program_title", { required: true })}
-            />
-            {errors.program_title && (
-              <span className="text-red-500 text-sm">Title is required</span>
+          {/* Submit Button */}
+          <div className="mt-6">
+            {loading ? (
+              <button
+                type="button"
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-md px-6 py-3 font-medium cursor-not-allowed w-full"
+              >
+                Loading...
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-md px-6 py-3 font-medium w-full hover:bg-[#4f1930] transition-colors"
+              >
+                Submit
+              </button>
             )}
           </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="programContent"
-              className="block font-semibold mb-2"
-            >
-              Program Content
-            </label>
-            <textarea
-              id="programContent"
-              placeholder="Enter program content"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-base resize-none"
-              {...register("programContent", { required: true })}
-              rows="4"
-            />
-            {errors.programContent && (
-              <span className="text-red-500 text-sm">Content is required</span>
-            )}
-          </div>
-
-          {/* Display loading indicator while submitting */}
-          {loading ? (
-            <button
-              type="button"
-              className="bg-[#ea7b30] text-white rounded-md px-4 py-2 font-medium cursor-not-allowed w-full"
-            >
-              Loading...
-            </button>
-          ) : (
-            <button
-              type="submit"
-              className="bg-[#ea7b30] text-white rounded-md px-4 py-2 font-medium w-full hover:bg-[#4f1930] transition-colors"
-            >
-              Submit
-            </button>
-          )}
         </form>
       </div>
     </div>
