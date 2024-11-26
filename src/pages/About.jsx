@@ -1,6 +1,6 @@
 import { FaReact, FaAws } from 'react-icons/fa'; 
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiGraphql, SiLaravel } from 'react-icons/si'; 
-import about from "../assets/about.jpg";
+import about from "../assets/elisap.jpg";
 import Resume from "../assets/Elisa_Updated_cv.pdf";
 import { SiSpringboot } from "react-icons/si";
 import { AiOutlineJavaScript } from "react-icons/ai";
