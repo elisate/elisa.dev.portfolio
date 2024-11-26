@@ -4,7 +4,7 @@ function History() {
       {/* Title Section */}
       <div className="text-center mb-12 animate-fade-in">
         <h2 className="text-4xl font-bold mb-4 animate-fade-in-up">
-          Job History
+          Experience
         </h2>
         <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mx-auto mb-6 animate-width-grow"></div>
         <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up delay-2">
@@ -75,10 +75,10 @@ function History() {
         <div className="bg-[#1e1e2f] p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up delay-10">
           <h3 className="text-2xl font-bold mb-2">Mobile App Developer</h3>
           <p className="text-gray-400 mb-4">
-            Makuza Plazza, 11th floor Block A
+            KABC, 11th floor Block A
           </p>
           <p className="text-gray-400 mb-6">
-            At Makuza Plaza, I work as a Full Stack Developer, where I am
+            At KABC, I work as a Full Stack Developer, where I am
             responsible for developing and maintaining a mobile application for
             an e-commerce platform. I handle both the frontend and backend
             development using React Native and Node.js, ensuring a seamless user
