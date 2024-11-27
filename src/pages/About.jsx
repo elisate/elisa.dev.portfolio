@@ -8,6 +8,12 @@ import { FaJava } from "react-icons/fa";
 import { FaSass } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa6";
+import { FaGit} from "react-icons/fa";
+import { SiPython } from "react-icons/si";
+import { FaDev } from "react-icons/fa";
+import { FaGitAlt } from "react-icons/fa6";
+
 
 
 function About() {
@@ -24,19 +30,25 @@ function About() {
 
       {/* Text Section */}
       <div className="md:w-1/2 md:pl-8">
-        <h2 className="text-4xl font-bold mb-4">About Myself</h2>
+        <h2 className="text-4xl font-bold mb-4 pt-6">About Myself</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] mb-6"></div>
         <p className="text-gray-400 mb-8 leading-relaxed">
-          As a dedicated software engineer, I bring a strong problem-solving
-          mindset and technical proficiency to every project. With hands-on
-          experience in Full-stack Engineering, I excel in collaborative
-          environments. With a passion for frontend development, I ve dedicated
-          my efforts to crafting seamless and visually stunning user interfaces.
+          As a versatile Software Engineer, I am passionate about creating
+          impactful solutions across various domains. I specialize in full-stack
+          development, with extensive experience in both frontend and backend
+          technologies. My expertise in building responsive and interactive web
+          applications using React, Next.js, and TypeScript empowers me to
+          deliver user-centric designs. On the backend, I utilize Node.js,
+          Spring Boot, and Laravel to build efficient and scalable systems. I
+          also have hands-on experience working with databases such as MySQL and
+          MongoDB. Additionally, I develop mobile applications with Flutter and
+          engage in IoT projects that bridge the gap between software and
+          hardware.
           <br />
           <br />
           <span className="text-white font-semibold">
-            Let us connect and discuss how my skills can contribute to the
-            success of your projects. I build awesome products using:
+            I’d love to connect and explore how my expertise can drive the
+            success of your projects. I create exceptional products using:
           </span>
           <br />
           <br />
@@ -51,10 +63,13 @@ function About() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <FaReact
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
+              <span className="animate-spin">
+                <FaReact
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
               <span>React</span>
             </div>
 
@@ -67,10 +82,13 @@ function About() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiTailwindcss
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
+              <span className="animate-spin">
+                <SiTailwindcss
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
               <span>Tailwind CSS</span>
             </div>
             <div className="flex items-center space-x-2">
@@ -90,19 +108,25 @@ function About() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiSpringboot
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
+              <span className="animate-bounce">
+                <SiSpringboot
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
               <span>Springboot</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <SiGraphql
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
-              <span>GraphQL</span>
+              <span className="animate-ping">
+                <FaNodeJs
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
+              <span>Node js</span>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -131,7 +155,11 @@ function About() {
           <br />
           <br />
           <span className="text-[#32F6FF] font-semibold">
-            Additionl: Git • Python •C++ • NodeJS • TypeScript
+            Other Expertise:&nbsp;
+            <FaGitAlt className="inline-block mr-2" size={20} /> Git•
+            <SiPython className="inline-block mr-2" size={20} /> Python •
+            <FaDev className="inline-block mr-2" size={20} /> C++ •
+            <SiTypescript className="inline-block mr-2" size={20} /> TypeScript
           </span>
         </p>
         <div className="flex space-x-4">

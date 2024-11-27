@@ -7,9 +7,8 @@ function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-4">About Me</h4>
             <p className="text-gray-400 leading-relaxed">
-              I'm Dushimiyimana Elisa, a passionate software developer
-              specializing in front-end and full-stack development. I love
-              creating modern and responsive web applications.
+              I'm Dushimiyimana Elisa, a driven software developer with
+              expertise in front-end and full-stack development. 
             </p>
           </div>
 

@@ -15,12 +15,12 @@ function Home() {
           </h2>
 
           <p className="mt-6 text-sm md:text-base lg:text-lg text-gray-300 max-w-lg animate-fade-in-up delay-4">
-            As a Fullstack Engineer, I specialize in both frontend and backend
-            development. On the frontend, I work with HTML, CSS, JavaScript,
+            As a Software Engineer, I specialize in both frontend and backend
+            development. For the frontend, I work with HTML, CSS, JavaScript,
             TypeScript, React, and Next.js. On the backend, I utilize Node.js,
-            .NET Core, Express, SQL, Postgres, and Prisma. I can build robust
-            web, mobile, and desktop applications, and I also manage deployment
-            tasks to ensure seamless project delivery.
+            Express, SQL and Postgres. I develop robust web,
+            mobile (using Flutter), and IoT applications and also manage
+            deployment tasks to ensure seamless project delivery.
           </p>
 
           <Link to="/contact">

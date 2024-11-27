@@ -8,10 +8,12 @@ function Service() {
         </h2>
         <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mx-auto mb-6 animate-width-grow"></div>
         <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up delay-2">
-          As a versatile software developer, I provide a range of services to
-          help bring your projects to life. From crafting responsive web designs
-          to building robust applications, I am here to turn your ideas into
-          reality.
+          As a skilled software developer, I offer a wide array of services to
+          help transform your ideas into functional, real-world solutions.
+          Whether it’s creating responsive websites or developing powerful
+          applications, I’m dedicated to delivering high-quality results
+          tailored to your project’s needs." Let me know if you would like
+          further adjustments!
         </p>
       </div>
 
@@ -22,10 +24,12 @@ function Service() {
           <div className="mb-6 text-center">
             <i className="fas fa-laptop-code text-5xl text-white animate-pulse"></i>
           </div>
-          <h3 className="text-2xl font-bold mb-3 text-center">Web Design</h3>
+          <h3 className="text-2xl font-bold mb-3 text-center">
+            Web Development
+          </h3>
           <p className="text-gray-200 text-center">
-            I create visually appealing, responsive web designs that provide
-            seamless user experiences across all devices.
+            I design and develop user-friendly websites that deliver exceptional
+            user experiences and responsive layouts across all devices.
           </p>
         </div>
 
@@ -35,11 +39,11 @@ function Service() {
             <i className="fas fa-mobile-alt text-5xl text-[#5B4EFF] animate-bounce"></i>
           </div>
           <h3 className="text-2xl font-bold mb-3 text-center">
-            Application Development
+            Mobile Application Development
           </h3>
           <p className="text-gray-300 text-center">
-            I build scalable and efficient applications for web, mobile, and
-            desktop, tailored to meet your specific needs.
+            I create custom mobile apps for iOS and Android, focusing on
+            performance and scalability to ensure an engaging experience.
           </p>
         </div>
 
@@ -48,13 +52,10 @@ function Service() {
           <div className="mb-6 text-center">
             <i className="fas fa-database text-5xl text-[#32F6FF] animate-spin-slow"></i>
           </div>
-          <h3 className="text-2xl font-bold mb-3 text-center">
-            Full-Stack Web Development
-          </h3>
+          <h3 className="text-2xl font-bold mb-3 text-center">UI/UX Design</h3>
           <p className="text-gray-300 text-center">
-            I specialize in both frontend and backend development, using
-            technologies like React, Next.js, and Node.js to create
-            comprehensive web solutions.
+            I focus on creating intuitive user interfaces and seamless user
+            experiences using modern design principles and tools.
           </p>
         </div>
 
@@ -64,11 +65,37 @@ function Service() {
             <i className="fas fa-chart-line text-5xl text-[#ff4a4a] animate-bounce"></i>
           </div>
           <h3 className="text-2xl font-bold mb-3 text-center">
-            SEO & Marketing
+            Digital Marketing
           </h3>
           <p className="text-gray-300 text-center">
-            I enhance your online presence through strategic SEO and marketing
-            techniques, driving traffic and increasing conversions.
+            I drive business growth through targeted SEO strategies and
+            marketing techniques, ensuring better visibility and engagement.
+          </p>
+        </div>
+
+        {/* Service Card 5: IoT & Embedded Systems */}
+        <div className="bg-[#1c1c2d] p-8 rounded-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-3 hover:rotate-1 transition-all duration-500 animate-fade-in-up delay-10">
+          <div className="mb-6 text-center">
+            <i className="fas fa-cogs text-5xl text-[#ff4a4a] animate-bounce"></i>
+          </div>
+          <h3 className="text-2xl font-bold mb-3 text-center">
+            IoT & Embedded Systems
+          </h3>
+          <p className="text-gray-300 text-center">
+            I design and develop embedded systems and IoT solutions, enabling
+            smart devices to communicate and perform advanced tasks.
+          </p>
+        </div>
+
+        {/* Service Card 6: System Design */}
+        <div className="bg-[#1c1c2d] p-8 rounded-lg shadow-lg hover:shadow-2xl transform hover:-translate-y-3 hover:rotate-1 transition-all duration-500 animate-fade-in-up delay-10">
+          <div className="mb-6 text-center">
+            <i className="fas fa-cogs text-5xl text-[#ff4a4a] animate-bounce"></i>
+          </div>
+          <h3 className="text-2xl font-bold mb-3 text-center">System Design</h3>
+          <p className="text-gray-300 text-center">
+            I specialize in designing robust systems that scale efficiently,
+            integrating complex workflows with ease.
           </p>
         </div>
       </div>

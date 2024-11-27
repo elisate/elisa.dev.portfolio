@@ -5,7 +5,6 @@ import Project from "./pages/Projects";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-import SingleBlog from "./pages/SingleBlog";
 import About from "./pages/About";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./dashboards/Dashboard";
@@ -25,7 +24,7 @@ export default function App() {
             <Route path="/blog" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/singleblog" element={<SingleBlog />} />
+          
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
