@@ -11,27 +11,37 @@ import Dashboard from "./dashboards/Dashboard";
 import Dashboardlayout from "./dashboards/Dashboardlayout";
 import Projects from "./dashboards/Projects";
 import { Appcontext } from "./fetch/ContextProvider";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 export default function App() {
   return (
     <Appcontext>
       <BrowserRouter>
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Welcome />} />
-            <Route path="/landing" element={<Welcome />} />
-            <Route path="/projects" element={<Project/>} />
-            <Route path="/blog" element={<Blogs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-          
+            <Route path="landing" element={<Welcome />} />
+            <Route path="projects" element={<Project />} />
+            <Route path="blog" element={<Blogs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="about" element={<About />} />
           </Route>
+
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Dashboardlayout />}>
+
+          {/* Protected Dashboard Routes */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboardlayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Dashboard />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/project" element={<Projects/>}/>
+            <Route path="projects" element={<Projects />} />
           </Route>
         </Routes>
       </BrowserRouter>

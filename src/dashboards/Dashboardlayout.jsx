@@ -1,16 +1,17 @@
 import React from "react";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import NavPart from "./NavPart";
 import Sidebar from "./Sidebar";
-
+import ProtectedRoute from "../pages/ProtectedRoute";
 function DashboardLayout() {
   return (
-    <div>
-      <NavPart />
-      <Sidebar />
+    <ProtectedRoute>
+      <div>
+        <NavPart />
+        <Sidebar />
         <Outlet />
-     
-    </div>
+      </div>
+    </ProtectedRoute>
   );
 }
 
