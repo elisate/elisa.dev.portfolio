@@ -63,7 +63,7 @@ const blogs = [
     <div className="p-6 md:p-10 lg:p-12 bg-[#0a0b1e] text-white min-h-screen">
       {/* Title Section */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 pt-10">Blogs</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 pt-16">Blogs</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-[#5B4EFF] to-[#32F6FF] mx-auto mb-4"></div>
         <p className="text-gray-400 max-w-2xl mx-auto">
           Dive into my latest blog posts, covering insights and stories on
