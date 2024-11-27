@@ -3,6 +3,7 @@ import { FaReact, FaGithub } from "react-icons/fa"; // React icons for logos
 import { SiTailwindcss } from "react-icons/si"; // Tailwind CSS icon
 import axios from "axios";
 import { FaNodeJs } from "react-icons/fa";
+import { Notify } from "notiflix"; // Import Notiflix for notifications
 
 function Project() {
   const [projects, setProjects] = useState([]);
@@ -20,6 +21,28 @@ function Project() {
     };
     getProjects();
   }, []);
+
+  const userToken = JSON.parse(localStorage.getItem("userToken"));
+  const role = userToken?.user?.role;
+  console.log("User role:", role);
+
+  // Function to handle preview button click
+  const handlePreviewClick = (projectTitle, projectLink) => {
+    if (projectTitle === "Real Estate Project" && role !== "Admin") {
+      // Show notification if the user is not admin and the project is "Real Estate Project"
+      Notify.failure(
+        "This project is private. Please contact the admin to view it.",
+        {
+          position: "center-top",
+          timeout: 4000,
+          backOverlay: true,
+        }
+      );
+    } else {
+      // Redirect to the project's link if it's not "Real Estate Project" or if the user is admin
+      window.open(projectLink, "_blank");
+    }
+  };
 
   return (
     <div className="p-4 md:p-8 lg:p-12 mt-8 bg-[#0a0b1e] text-white min-h-screen">
@@ -52,12 +75,12 @@ function Project() {
             <h3 className="text-xl md:text-2xl font-bold mb-3">
               {project.projectTitle}
             </h3>
+
             {/* Project Description */}
             <p className="text-gray-400 mb-4">{project.projectContent}</p>
             {/* Tech Stack */}
             <div className="flex space-x-4 mb-4">
               <span className="animate-spin">
-                {" "}
                 <FaReact
                   className="text-3xl md:text-4xl text-[#32F6FF]"
                   title="React"
@@ -72,31 +95,21 @@ function Project() {
               <span className="animate-ping">
                 <FaNodeJs
                   className="text-3xl md:text-4xl text-[#32F6FF] animate-spin-slow"
-                  title="React"
+                  title="Node.js"
                 />
               </span>
             </div>
             {/* Buttons */}
             <div className="flex space-x-4">
               {/* Preview Button */}
-              <a
-                href={project.projectRep} // Replace with the actual preview link from the data
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() =>
+                  handlePreviewClick(project.projectTitle, project.projectLink)
+                } // Pass the projectLink
                 className="px-4 md:px-6 py-2 bg-[#5B4EFF] text-white rounded-full hover:bg-[#32F6FF] transition-colors duration-300"
               >
                 Preview
-              </a>
-
-              {/* GitHub Button */}
-              <a
-                href={project.projectRep} // Replace with the actual GitHub repo link from the data
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 md:px-6 py-2 border border-[#5B4EFF] rounded-full text-[#5B4EFF] hover:bg-[#5B4EFF] hover:text-white transition-colors duration-300 flex items-center"
-              >
-                <FaGithub className="mr-2" /> GitHub
-              </a>
+              </button>
             </div>
           </div>
         ))}

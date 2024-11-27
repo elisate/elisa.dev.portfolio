@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Welcome from "./Welcome";
 import Layout from "./pages/Layout";
-import Project from "./pages/Projects";
+import Project from "./pages/Project";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -20,7 +20,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Welcome />} />
             <Route path="/landing" element={<Welcome />} />
-            <Route path="/projects" element={<Project />} />
+            <Route path="/projects" element={<Project/>} />
             <Route path="/blog" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />

@@ -1,7 +1,7 @@
 import { FaReact, FaAws } from 'react-icons/fa'; 
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiGraphql, SiLaravel } from 'react-icons/si'; 
+import { SiNextdotjs, SiTypescript, SiTailwindcss,SiLaravel } from 'react-icons/si'; 
 import about from "../assets/elisap.jpg";
-import Resume from "../assets/Elisa_CV.pdf";
+import Resume from "../assets/Dushimiyimana_Elisa_CV.pdf";
 import { SiSpringboot } from "react-icons/si";
 import { AiOutlineJavaScript } from "react-icons/ai";
 import { FaJava } from "react-icons/fa";
@@ -9,7 +9,6 @@ import { FaSass } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa6";
-import { FaGit} from "react-icons/fa";
 import { SiPython } from "react-icons/si";
 import { FaDev } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
@@ -163,10 +162,8 @@ function About() {
           </span>
         </p>
         <div className="flex space-x-4">
-          <button className="px-6 py-2 border border-[#5B4EFF] rounded-full text-[#5B4EFF] hover:bg-[#5B4EFF] hover:text-white transition-colors duration-300">
-            More Info
-          </button>
-          <a href={Resume} download="Elisa_CV.pdf">
+          
+          <a href={Resume} download="Dushimiyimana_Elisa_CV.pdf">
             <button className="relative px-6 py-2 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-full hover:bg-[#32F6FF] transition-colors duration-300 animate-bounce">
               <span className="inline-block overflow-hidden whitespace-nowrap  pr-2 ">
                 Download cv
