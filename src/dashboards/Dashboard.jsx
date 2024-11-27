@@ -10,7 +10,7 @@ import Chart from "./Chart";
 import { mycontext } from "../fetch/ContextProvider";
 
 function Dashboard() {
-  const { users, contact,project} = mycontext();
+  const {project} = mycontext();
 
   return (
     <div className="ml-[14rem] pt-[6rem] pr-[2rem]">
@@ -26,7 +26,7 @@ function Dashboard() {
               <RiUserLine className="ml-1" />
             </div>
           </div>
-          <div className="text-[1.4rem] font-medium">{users.length}</div>
+          <div className="text-[1.4rem] font-medium">2</div>
           <div className="flex justify-between items-center">
             <div className="border-b-[1.3px] border-black text-[0.8rem]">
               see all users
@@ -93,7 +93,7 @@ function Dashboard() {
               <GrContactInfo className="ml-1" />
             </div>
           </div>
-          <div className="text-[1.4rem] font-medium">{contact.length}</div>
+          <div className="text-[1.4rem] font-medium">1</div>
           <div className="flex justify-between items-center">
             <div className="border-b-[1.3px] border-black text-[0.8rem]">
               see all contacts

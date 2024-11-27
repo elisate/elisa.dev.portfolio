@@ -10,7 +10,7 @@ import {
   FaEye,
 } from "react-icons/fa";
 // import { mycontext } from "../fetch/ContextProvider";
-import AddProgram from "./AddProgram";
+import AddProject from "./AddProject";
 import { MdAddBox } from "react-icons/md";
 import { IoMdCloudDownload, IoMdPrint } from "react-icons/io";
 
@@ -28,9 +28,6 @@ function Progects() {
 
 
 const [project, setProject] = useState([]);
-
-
- 
   useEffect(() => {
     const getproject = async () => {
       try {
@@ -75,25 +72,32 @@ const [project, setProject] = useState([]);
         Header: "Project Name",
         accessor: "projectTitle",
       },
+    
+     {
+  Header: "Images",
+  accessor: "images",
+  Cell: ({ value }) => (
+    <img src={value} alt="Image" className="w-16 h-16 object-cover rounded" />
+  ),
+},
+
       {
-        Header: "Documents",
-        accessor: "documents",
-      },
-      {
-        Header: "Images",
-        accessor: "images",
-      },
-      {
-        Header: "project Content",
-        accessor: "projectContent",
-      },
+  Header: "Project Content",
+  accessor: "projectContent",
+  Cell: ({ value }) => {
+    // Split the content into words and slice it to the first 10 words
+    const words = value.split(" ").slice(0, 10).join(" ");
+    return <span>{words}{words.length < value.length ? "..." : ""}</span>;
+  },
+},
+
       {
         Header: "project Rep",
         accessor: "projectRep",
       },
       {
-        Header: "  project Link",
-        accessor: "  projectLink",
+        Header: "project Link",
+        accessor: "projectLink",
       },
 
       {
@@ -101,11 +105,11 @@ const [project, setProject] = useState([]);
         Cell: ({ row }) => (
           <div className="flex gap-4">
             <FaEye
-              className="text-[#ea7b30] cursor-pointer"
+              className="text-[#00c939] cursor-pointer"
               onClick={() => handleView(row.original)}
             />
             <FaEdit
-              className="text-[#4caf50] cursor-pointer"
+              className="text-[#00C9A7] cursor-pointer"
               onClick={() => handleEdit(row.original)}
             />
             <FaTrash
@@ -186,15 +190,14 @@ const [project, setProject] = useState([]);
 
   return (
     <div className="pt-20 pl-12 md:pl-24 lg:pl-48">
-      {addProgram && <AddProgram handleProgram={handleProgram} />}
+      {addProgram && <AddProject handleProgram={handleProgram} />}
 
       {/* View Program Modal */}
-      
 
       <div className="ml-10  pr-11 md:pl-8 pt-4 md:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between w-full md:w-11/12 text-sm md:text-lg ">
         <div className="flex flex-row gap-4 items-center">
           <div
-            className="flex flex-row gap-1 items-center text-green-500 cursor-pointer hover:underline "
+            className="flex flex-row gap-1 items-center text-[#00C9A7] cursor-pointer hover:underline "
             onClick={handleProgram}
           >
             <MdAddBox
@@ -205,7 +208,7 @@ const [project, setProject] = useState([]);
           </div>
 
           <div
-            className="flex flex-row items-center gap-1 text-green-500 cursor-pointer hover:underline"
+            className="flex flex-row items-center gap-1 text-[#00C9A7] cursor-pointer hover:underline"
             onClick={handlePrint}
           >
             <IoMdPrint className="  text-sm md:text-base cursor-pointer transition-colors duration-300 " />
@@ -213,7 +216,7 @@ const [project, setProject] = useState([]);
           </div>
 
           <div
-            className="flex flex-row items-center gap-1 text-green-500 cursor-pointer hover:underline"
+            className="flex flex-row items-center gap-1 text-[#00C9A7] cursor-pointer hover:underline"
             onClick={handleDownloadPDF}
           >
             <IoMdCloudDownload className="text-sm md:text-base cursor-pointer transition-colors duration-300 " />

@@ -6,7 +6,6 @@ import { mycontext } from "../fetch/ContextProvider";
 import image from '../assets/profile2.png';
 
 function NavPart() {
-  const { contact } = mycontext();
 
   return (
     <div className="flex flex-row gap-1 items-center bg-gray-100 h-20 sm:ml-48 ml-0 fixed border-b border-gray-600 w-full sm:w-[85%] sm:pr-8 pr-4">
@@ -25,7 +24,7 @@ function NavPart() {
       <div className="relative mx-2 text-xl text-gray-700">
         <BiMessage />
         <span className="absolute top-[-7px] right-[-5px] bg-red-500 text-white rounded-full px-1.5 py-0.5 text-xs">
-          {contact.length}
+          2
         </span>
       </div>
 
