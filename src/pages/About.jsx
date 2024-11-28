@@ -1,5 +1,10 @@
-import { FaReact, FaAws } from 'react-icons/fa'; 
-import { SiNextdotjs, SiTypescript, SiTailwindcss,SiLaravel } from 'react-icons/si'; 
+import { FaReact, FaAws } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiLaravel,
+} from "react-icons/si";
 import about from "../assets/elisap.jpg";
 import Resume from "../assets/Dushimiyimana_Elisa_CV.pdf";
 import { SiSpringboot } from "react-icons/si";
@@ -12,14 +17,15 @@ import { FaNodeJs } from "react-icons/fa6";
 import { SiPython } from "react-icons/si";
 import { FaDev } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
-
-
+import { RiFlutterFill } from "react-icons/ri";
+import { DiDart } from "react-icons/di";
+import { DiPostgresql } from "react-icons/di";
 
 function About() {
   return (
-    <div className="flex flex-col md:flex-row items-center py-16 px-8 bg-[#0a0b1e] text-white">
+    <div className="flex flex-col md:flex-row items-end py-16 px-8 bg-[#0a0b1e] text-white">
       {/* Image Section */}
-      <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
+      <div className="md:w-1/2 flex justify-center mb-6 md:mb-0 h-full">
         <img
           src={about}
           alt="About Myself"
@@ -28,7 +34,7 @@ function About() {
       </div>
 
       {/* Text Section */}
-      <div className="md:w-1/2 md:pl-8">
+      <div className="md:w-1/2 md:pl-8 flex flex-col justify-between h-full">
         <h2 className="text-4xl font-bold mb-4 pt-6">About Myself</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] mb-6"></div>
         <p className="text-gray-400 mb-8 leading-relaxed">
@@ -54,10 +60,12 @@ function About() {
           <div className="flex flex-wrap gap-4">
             {/* Icons and Tech Names */}
             <div className="flex items-center space-x-2">
-              <SiNextdotjs
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
+              <span className="animate-spin">
+                <SiNextdotjs
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
               <span>Next.js</span>
             </div>
 
@@ -137,6 +145,27 @@ function About() {
             </div>
 
             <div className="flex items-center space-x-2">
+              <span className="animate-bounce">
+                <RiFlutterFill
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
+              <span>Flutter</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span>
+                <DiDart
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
+              <span>Dart</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
               <GrMysql
                 className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
                 size={24}
@@ -144,11 +173,24 @@ function About() {
               <span>Sql</span>
             </div>
             <div className="flex items-center space-x-2">
-              <SiMongodb
-                className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
-                size={24}
-              />
+              <span className="animate-ping">
+                <SiMongodb
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+
               <span>Mongo</span>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <span className="animate-bounce">
+                <DiPostgresql
+                  className="bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3]"
+                  size={24}
+                />
+              </span>
+              <span>Postgresql</span>
             </div>
           </div>
           <br />
@@ -161,8 +203,7 @@ function About() {
             <SiTypescript className="inline-block mr-2" size={20} /> TypeScript
           </span>
         </p>
-        <div className="flex space-x-4">
-          
+        <div className="flex space-x-4 items-end">
           <a href={Resume} download="Dushimiyimana_Elisa_CV.pdf">
             <button className="relative px-6 py-2 bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] text-white rounded-full hover:bg-[#32F6FF] transition-colors duration-300 animate-bounce">
               <span className="inline-block overflow-hidden whitespace-nowrap  pr-2 ">
@@ -170,7 +211,6 @@ function About() {
               </span>
             </button>
           </a>
-          {/* border-r-2 border-white */}
         </div>
       </div>
     </div>
