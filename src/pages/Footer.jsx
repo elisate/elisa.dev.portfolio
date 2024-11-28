@@ -8,7 +8,7 @@ function Footer() {
             <h4 className="text-xl font-semibold mb-4">About Me</h4>
             <p className="text-gray-400 leading-relaxed">
               I'm Dushimiyimana Elisa, a driven software developer with
-              expertise in front-end and full-stack development. 
+              expertise in front-end and full-stack development.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/dushimiyimana-elisa/"
+                  href="https://www.linkedin.com/in/dushimiyimanaelisa/"
                   className="text-gray-400 hover:text-[#32F6FF] transition-colors duration-300"
                 >
                   <svg
