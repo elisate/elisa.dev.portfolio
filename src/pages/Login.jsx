@@ -46,14 +46,14 @@ function Login() {
 
      // Get the role from the response
      const role = userToken?.user?.role; // Ensure role is extracted properly
-     console.log("User role:", role); // Debugging role value
+
 
      // Navigate based on role
      if (role === "Admin") {
-       console.log("Navigating to dashboard...");
+      //  console.log("Navigating to dashboard...");
        navigate("/dashboard");
      } else {
-       console.log("Navigating to landing...");
+      //  console.log("Navigating to landing...");
        navigate("/landing");
      }
    } catch (error) {

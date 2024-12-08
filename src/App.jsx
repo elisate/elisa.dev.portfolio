@@ -32,16 +32,10 @@ export default function App() {
           <Route path="/signup" element={<SignUp />} />
 
           {/* Protected Dashboard Routes */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboardlayout />
-              </ProtectedRoute>
-            }
-          >
+          <Route path="/" element={<Dashboardlayout />}>
             <Route index element={<Dashboard />} />
-            <Route path="projects" element={<Projects />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard_project" element={<Projects />} />
           </Route>
         </Routes>
       </BrowserRouter>

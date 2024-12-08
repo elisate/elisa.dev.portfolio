@@ -85,8 +85,9 @@ function Sidebar() {
           <div className="text-xs pl-2">SERVICES</div>
           <div className="flex items-center gap-2 pl-4">
             <SiBookstack className="text-[#00C9A7] text-xl" />
-            <Link to="/project">Projects</Link>
+            <Link to="/dashboard_project">Projects</Link> {/* Relative path */}
           </div>
+
           <div className="flex items-center gap-2 pl-4">
             <PiNotePencil className="text-[#00C9A7] text-xl" />
             <Link to="/dashboard">Services</Link>
