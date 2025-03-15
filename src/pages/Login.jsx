@@ -1,5 +1,5 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Import the Link component
+import { json, Link } from "react-router-dom"; // Import the Link component
 import LoginVectorImage from "../assets/logine.png";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -41,19 +41,20 @@ function Login() {
      reset();
 
      // Store token in localStorage
-     const userToken = res.data;
-     localStorage.setItem("userToken", JSON.stringify(userToken));
+    //  const userToken = res.data;
+    //  localStorage.setItem("userToken", JSON.stringify(userToken));
 
-     // Get the role from the response
-     const role = userToken?.user?.role; // Ensure role is extracted properly
+     const  userToken=res.data;
+     localStorage.setItem("userToken",JSON.stringify(userToken))
+     const role = userToken?.user?.role; 
 
 
-     // Navigate based on role
+    
      if (role === "Admin") {
-      //  console.log("Navigating to dashboard...");
+     
        navigate("/dashboard");
      } else {
-      //  console.log("Navigating to landing...");
+     
        navigate("/landing");
      }
    } catch (error) {

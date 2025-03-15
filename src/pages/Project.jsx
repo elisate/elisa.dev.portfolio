@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { FaReact, FaGithub } from "react-icons/fa"; // React icons for logos
 import { SiTailwindcss } from "react-icons/si"; // Tailwind CSS icon
 import axios from "axios";
 import { FaNodeJs } from "react-icons/fa";
-import { Notify } from "notiflix"; // Import Notiflix for notifications
-
+import { DiDjango } from "react-icons/di";
 function Project() {
   const [projects, setProjects] = useState([]);
 
@@ -94,6 +93,12 @@ function Project() {
               </span>
               <span className="animate-ping">
                 <FaNodeJs
+                  className="text-3xl md:text-4xl text-[#32F6FF] animate-spin-slow"
+                  title="Node.js"
+                />
+              </span>
+              <span className="animate-ping">
+                <DiDjango
                   className="text-3xl md:text-4xl text-[#32F6FF] animate-spin-slow"
                   title="Node.js"
                 />
