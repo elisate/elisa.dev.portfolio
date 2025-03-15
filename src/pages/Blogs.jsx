@@ -4,6 +4,7 @@ import { FaUser, FaRegCalendarAlt, FaEye, FaComment } from "react-icons/fa";
 import blog1 from "../assets/blog1.jpeg";
 import blog3 from "../assets/blog3.png";
 import blog2 from "../assets/blog2.jpg";
+import blog4 from "../assets/im.jpg"
 
 function Blogs() {
   // Array to hold blog data
@@ -12,7 +13,7 @@ const blogs = [
     id: 1,
     image: blog4,
     author: "Dtechel",
-    date: "12 Dec, 2017",
+    date: "12 Nov, 2022",
     views: "1.2M",
     comments: 6,
     title: "Tech UpSkill Program",
@@ -36,7 +37,7 @@ const blogs = [
     id: 3,
     image: blog3,
     author: "Elisa",
-    date: "10 Oct, 2020",
+    date: "15 Dec, 2023",
     views: "450K",
     comments: 8,
     title: "FFR Project",
@@ -48,12 +49,24 @@ const blogs = [
     id: 4,
     image: blog2,
     author: "Elisa",
-    date: "10 Oct, 2020",
+    date: "10 Oct, 2024",
     views: "450K",
     comments: 8,
     title: "CMU Bridge Program",
     description:
       "An Internet of Things (IoT) training program, providing hands-on experience with smart and connected devices.",
+    link: "/singleblog",
+  },
+  {
+    id: 4,
+    image: blog4,
+    author: "Elisa",
+    date: "16 Dec, 2025",
+    views: "450K",
+    comments: 8,
+    title: "Software Development Trainer – Tekher Program at kLab",
+    description:
+      "As a Software Development Trainer at kLab in the Tekher Program, I mentor and guide aspiring developers in mastering full-stack development.",
     link: "/singleblog",
   },
 ];
