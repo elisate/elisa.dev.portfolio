@@ -4,7 +4,7 @@ import { FaUser, FaRegCalendarAlt, FaEye, FaComment } from "react-icons/fa";
 import blog1 from "../assets/blog1.jpeg";
 import blog3 from "../assets/blog3.png";
 import blog2 from "../assets/blog2.jpg";
-import blog4 from "../assets/im.jpg"
+import im from "../assets/im.jpg"
 
 function Blogs() {
   // Array to hold blog data
@@ -59,7 +59,7 @@ const blogs = [
   },
   {
     id: 4,
-    image: blog4,
+    image: im,
     author: "Elisa",
     date: "16 Dec, 2025",
     views: "450K",
