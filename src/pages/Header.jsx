@@ -24,7 +24,7 @@ function Header() {
           </div>
 
           <Link to="/">
-            <span className="ml-2 text-xl text-white font-semibold">ELISA</span>
+            <span className="ml-2 text-xl text-white font-semibold">Dtechel</span>
           </Link>
         </div>
 
