@@ -4,23 +4,18 @@ import Profile from "../assets/Profile.png";
 function Home() {
   return (
     <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black min-h-screen flex items-center mt-20">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 ">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12 pb-[3rem]">
         {/* Text Section */}
         <div className="flex-1 text-center md:text-left animate-fade-in">
-          <h1 className="text-xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] animate-gradient-slide">
+          <h2 className="text-xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00C9A7] via-[#1E90FF] to-[#9A57D3] animate-gradient-slide">
             Hello, I m Dushimiyimana Elisa,
-          </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-4 animate-fade-in-up delay-2">
-            Software Engineer
           </h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-4 animate-fade-in-up delay-2">
+            Software Engineer
+          </h3>
 
           <p className="mt-6 text-sm md:text-base lg:text-lg text-gray-300 max-w-lg animate-fade-in-up delay-4">
-            As a Software Engineer, I specialize in both frontend and backend
-            development. For the frontend, I work with HTML, CSS, JavaScript,
-            TypeScript, React, and Next.js. On the backend, I utilize Node.js,
-            Express, SQL and Postgres. I develop robust web,
-            mobile (using Flutter), and IoT applications and also manage
-            deployment tasks to ensure seamless project delivery.
+            I am an experienced Software Engineer with a strong background in developing scalable web and mobile applications. I am skilled in React.js, Next.js and Tailwind CSS for front-end development, as well as Spring Boot, Node.js, Laravel, and Django (for AI-powered solutions) in back-end development. Proficient in designing and implementing RESTful APIs, ensuring high performance and responsiveness. Additionally, I specialize in mobile app development using Flutter, creating seamless and user-friendly experiences.
           </p>
 
           <Link to="/contact">
