@@ -103,7 +103,7 @@ function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/dushimiyimanaelisa/"
+                  href="https://www.linkedin.com/in/dushimiyimana-elysa/"
                   className="text-gray-400 hover:text-[#32F6FF] transition-colors duration-300"
                 >
                   <svg
